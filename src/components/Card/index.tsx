@@ -4,6 +4,7 @@ import CarInfo from "./CarInfo";
 import { useState } from "react";
 import DetailModal from "./DetailModal";
 import { motion } from "framer-motion";
+import { generateImage } from "../../utils";
 
 type CardProps = {
   car: CarType;
@@ -26,14 +27,15 @@ const Card = ({ car }: CardProps) => {
       {/* fiyat alanı */}
       <p className="flex mt-6 text-[32px]">
         <span className="text-[19px] font-semibold">$</span>
-        300
+        {/* rasgele fiyatlandırmak için */}
+        {Math.round(Math.random() * 180) + 90}
         <span className="text-[14px] self-end font-medium">/gün</span>
       </p>
 
       {/* resim */}
       <div className="relative w-full h-40 my-3">
         <img
-          src="/hero.png"
+          src={generateImage(car)}
           alt="car-pic"
           className="w-full h-full object-contain"
         />

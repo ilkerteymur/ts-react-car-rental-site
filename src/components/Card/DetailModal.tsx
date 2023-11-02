@@ -1,5 +1,6 @@
 import { CarType } from "../../types";
 import { AnimatePresence, motion } from "framer-motion";
+import { generateImage } from "../../utils";
 
 type DetailProps = {
   isOpen: boolean;
@@ -28,7 +29,35 @@ const DetailModal = ({ isOpen, closeModal, car }: DetailProps) => {
             </button>
 
             {/* todo > fotoğraflar */}
-            <div className="flex-1 flex flex-col gap-3"></div>
+            <div className="flex-1 flex flex-col gap-3">
+              <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
+                <img className="h-full mx-auto" src="hero.png" alt="" />
+              </div>
+              {/* küçük resimler */}
+              <div className="flex gap-3">
+                <div className="flex flex-1 relative w-full h-24 bg-primary-blue-100">
+                  <img
+                    className="h-full mx-auto object-contain"
+                    src={generateImage(car, "29")}
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-1 relative w-full h-24 bg-primary-blue-100">
+                  <img
+                    className="h-full mx-auto object-contain"
+                    src={generateImage(car, "33")}
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-1 relative w-full h-24 bg-primary-blue-100">
+                  <img
+                    className="h-full mx-auto object-contain"
+                    src={generateImage(car, "13")}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* araba bilgilerini objeden dizye çevirip dönme */}
             {Object.entries(car)

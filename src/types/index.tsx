@@ -25,3 +25,16 @@ export type CarType = {
   transmission: string;
   year: number;
 };
+
+export type OptionType = {
+  label: string;
+  value: string;
+};
+
+export type filterType = {
+  make?: string;
+  model?: string;
+  limit?: string;
+  fuel?: string;
+  year?: string;
+};

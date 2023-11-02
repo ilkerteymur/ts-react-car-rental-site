@@ -2,8 +2,11 @@ import CustomButton from "../CustomButton";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  // todo
-  const scroolTo = () => {};
+  const scroolTo = () => {
+    const ele: HTMLElement | null = document.getElementById("catalogue");
+
+    ele?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x max-h-[920px]">
